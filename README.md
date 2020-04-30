@@ -1,4 +1,4 @@
-# randomname-2020-05-project-01
+# randomname-2020-05-pro-01
 
 ## Projet name : Health product scanner: Healthy Eats 
 
@@ -19,7 +19,7 @@ Goal: Show efficienty of calories consumed per dollar //
 5. (localStorage and save calories count in list format 
 
 Basic sketch 
-![Screenshot of the project](/calories 1.png)
+![Screenshot of the project](/PaintSketch.png")
 
 * Modal for initial input  (equiv to prompt);
 * AJAX call once the modal submit button is pressed  
