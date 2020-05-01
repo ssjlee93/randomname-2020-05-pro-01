@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://www.ecopetit.cat/wpic/mpic/6-63445_food-wallpapers-download.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+tr {
+      background-color: white;
+      border-style: double;
+}
+.thead-dark {
+     color: green;
+}
+#nutrition {
+      border-width: 5px;
+      border-color: green;
+      border-style: double;
+}
