@@ -15,24 +15,28 @@
 
 <body>
     <header>
+        <div class="container">
         <div class="input-group my-3">
-            <input type="text" class="form-control" placeholder="Product Name" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
+            <input id="search" type="text" class="form-control" placeholder="Product Name" aria-label="Product Name"
+                aria-describedby="User input">
             <div class="input-group-append">
-                <button class="btn btn-outline-success" type="button" id="button-addon2">Button</button>
+                <button class="btn btn-outline-success" type="button" id="searchBtn"><i class="fas fa-search"></i></button>
             </div>
         </div>
+    </div>
     </header>
-
+    <div class="container">
     <div class="row">
         <div class="col-md-3">
             <div id="nutrition" class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Nutrition facts
+                  </div>
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title productName">Product Name </h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
@@ -42,9 +46,12 @@
                 <thead class="thead-dark">
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Total Calories</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Calories efficiency</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -53,6 +60,8 @@
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
@@ -72,9 +81,12 @@
 
         <div class="col-md-3">
             <div id="nutrition" class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Product Detail
+                  </div>
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title"><span id="brandName"></span> <span class="productName"></span></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -85,7 +97,8 @@
     </div>
 
     </div>
-
+</div>
+<script src="./script.js"></script>
 </body>
 
 </html>
