@@ -15,7 +15,7 @@ tr {
 .thead-dark {
      color: #006400;
 }
-#nutrition {
+#nutrition, .modal-content {
       border-width: 5px;
       border-color: #006400;
       border-style: outset;
@@ -52,4 +52,23 @@ tr {
       font-size: 25px;
       font-style: oblique;
       text-decoration: underline;
+}
+
+.modal-content{
+      text-align: center;
+      position: relative;
+}
+
+.modal-title {
+      padding-right: 45px;
+      text-align: center;
+}
+
+
+.btn-default {
+      position: relative;
+      margin-right: 135px;
+      border-style: outset;
+      border-width: 1px;
+      border-color: #006400;
 }

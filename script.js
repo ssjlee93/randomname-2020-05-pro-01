@@ -11,10 +11,9 @@ function searchItems() {
             "x-rapidapi-key": "fe7f8d06ecmsh1a3cdf165ed78bap1f81adjsnacbec97f711b"
         }
     }
-    
+
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
 }
-
-$("#searchBtn").on("click",searchItems)
+$("#searchBtn").on("click", searchItems)
