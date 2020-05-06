@@ -31,15 +31,21 @@
                     <div class="card-header">
                         Nutrition facts
                     </div>
+
+              
+
                     <img src="./ACNH_Tom_Nook_Wallpaper_[3840x2160].jpg" class="card-img-top" alt="...">
+
                     <div class="card-body">
                         <h5 class="card-title productName">Product Name </h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the
                             card's content.</p>
                     </div>
+
                 </div>
             </div>
+
             <div class="col-md-6">
                 <table class="table">
                     <thead class="thead-dark">
@@ -50,6 +56,7 @@
                             <th scope="col">Brand</th>
                             <th scope="col">Price</th>
                             <th scope="col">Calories Efficiency</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -80,43 +87,102 @@
                     </tbody>
                 </table>
             </div>
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Enter a keyword.</h4>
+
+
+
+            <div class="col-md-3">
+                <div id="nutrition" class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Product Detail
                     </div>
-                    <div class="modal-body">
-                        <p>Do not use special characters or numbers!</p>
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><span id="brandName"></span> <span class="productName"></span></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+
+ 
                 </div>
             </div>
+
         </div>
-        <div class="col-md-3">
-            <div id="nutrition" class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Product Detail
-                </div>
-                <img src="./ACNH_Tom_Nook_Wallpaper_[3840x2160].jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><span id="brandName"></span> <span class="productName"></span></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+    </div>
+
+    </div>
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Select an item and city.</h4>
             </div>
+            <div class="modal-body">
+                <h5>
+                    Select an Item.
+                </h5>
+
+
+                <!-- <div class="dropdown" id="menu6">
+                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" href="#menu6">
+                                Select an Item. <b class="caret"></b>
+                            </button> -->
+                <select>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="generateLettre">Cities</a></li>
+                        <option value="Eggs">Eggs</option>
+                        <option value="Milk">Milk</option>
+                        <option value="Bread">Bread</option>
+                        <option value="Orange Juice">Orange Juice [OJ]</option>
+                        <option value="Rice">Rice</option>
+                        <option value="Steak">Steak</option>
+                        <option value="Butter">Butter</option>
+
+                </select>
+            </div>
+            <h5>
+                Select a Location.
+            </h5>
+            <!-- <div class="dropdown2" id="menu6">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" href="#menu6">
+                            Select a City <b class="caret"></b>
+                        </button> -->
+
+            <select>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="generateLettre">Cities</a></li>
+                    <option value="Boise">Boise</option>
+                    <option value="DC">DC [Washington DC]</option>
+                    <option value="Honolulu">Honolulu</option>
+                    <option value="Houston">Houston</option>
+                    <option value="LA">LA [Los Angeles]</option>
+                    <option value="LV">LV [Las Vegas]</option>
+                    <option value="Phoenix">Phoenix</option>
+                    <option value="Portland">Portland</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="SF">SF [San Francisco]</option>
+
+            </select>
         </div>
+
+    </div>
+    <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
     </div>
+
+    </div>
+
     </div>
     <script src="./script.js"></script>
     <div class="footer">
         <p>Fortune Cookie</p>
     </div>
+
+
 </body>
+
 </html>
