@@ -1,4 +1,5 @@
 * {
+
     box-sizing: border-box;
 }
 
@@ -72,3 +73,5 @@ tr {
       border-width: 1px;
       border-color: #006400;
 }
+
+
