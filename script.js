@@ -1,20 +1,44 @@
-function searchItems() {
-    var keyword = $("#search").val().trim();
-    var qurl = "https://google-shopping.p.rapidapi.com/search?language=EN&keywords=" + keyword + "&country=US";
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": qurl,
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-host": "google-shopping.p.rapidapi.com",
-            "x-rapidapi-key": "fe7f8d06ecmsh1a3cdf165ed78bap1f81adjsnacbec97f711b"
-        }
-    }
-    
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
+var item = "";
+var city = "LA"; 
+var product = "eggs";
+
+function prices() {
+
+var settings = {
+  "url": "https://grocerybear.com/getitems?city=" + city + "&product=" + product + "&num_days=7",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "api-key": "D88BB3392503C0DB49C15ADA11395CD1BFD7886CF8CB5763FFF5A228A0EF93A0"
+
+  },
+};
+
+$.ajax(settings).done(function (response1) {
+  console.log(response1);
+  item = response1[0].title;
+  console.log(item)
+  
+});
+
 }
 
-$("#searchBtn").on("click",searchItems)
+function nutrition() {
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://trackapi.nutritionix.com/v2/search/instant?query=" + item + "?field=nf_calories",
+    "method": "GET",
+    "headers": {
+        "x-app-id": "84d7c19a",
+        "x-app-key": "b8834860ea9e6560026dfa655c816765"
+    }
+}
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
+
+}
+
+prices();
+nutrition();
