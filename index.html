@@ -1,58 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/70b95019d0.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <div class="container">
-            <div class="input-group my-3">
-                <input id="search" type="text" class="form-control" placeholder="Product Name" aria-label="Product Name"
-                    aria-describedby="User input">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-success" type="button" id="searchBtn"><i
-                            class="fas fa-search"></i></button>
+            <!-- two dropdown menus  -->
+            <nav class="navbar navbar-light bg-light py-0 mb-3">
+                <div class="btn-group m-2">
+                    <!-- list of cities -->
+                    <h3 class="mx-3">Choose a city: </h3>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle py-2" type="button" id="cities"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cities
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item city" type="button" data-city="all">all</button>
+                            <button class="dropdown-item city" type="button" data-city="Boise">Boise</button>
+                            <button class="dropdown-item city" type="button" data-city="DC">Washington DC</button>
+                            <button class="dropdown-item city" type="button" data-city="Honolulu">Honolulu</button>
+                            <button class="dropdown-item city" type="button" data-city="Houston">Houston</button>
+                            <button class="dropdown-item city" type="button" data-city="LA">Los Angeles</button>
+                            <button class="dropdown-item city" type="button" data-city="LV">Las Vegas</button>
+                            <button class="dropdown-item city" type="button" data-city="Phoenix">Phoenix</button>
+                            <button class="dropdown-item city" type="button" data-city="Portland">Portland</button>
+                            <button class="dropdown-item city" type="button" data-city="Seattle">Seattle</button>
+                            <button class="dropdown-item city" type="button" data-city="SF">San Francisco</button>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- list of query items -->
+                    <h3 class="mx-3">Choose an item: </h3>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle py-2" type="button" id="dropdownMenu2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Items
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="dropdown-item item" type="button" data-item="eggs">eggs</button>
+                            <button class="dropdown-item item" type="button" data-item="milk">milk</button>
+                            <button class="dropdown-item item" type="button" data-item="bread">bread</button>
+                            <button class="dropdown-item item" type="button" data-item="oj">orange juice</button>
+                            <button class="dropdown-item item" type="button" data-item="rice">rice</button>
+                            <button class="dropdown-item item" type="button" data-item="steak">steak</button>
+                            <button class="dropdown-item item" type="button" data-item="butter">butter</button>
+                        </div>
+                    </div>
+                    <!-- execute search -->
+
+                    <button class="btn btn-success mx-3" type="button" id="searchBtn"><i class="fas fa-search"></i>
+                        Search</button>
                 </div>
-            </div>
+        </div>
+
+        </nav>
         </div>
     </header>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div id="nutrition" class="card" style="width: 18rem;">
+                <!-- nutrition info  -->
+                <div id="nutrition" class="card">
                     <div class="card-header">
                         Nutrition facts
                     </div>
-                    <img src="./ACNH_Tom_Nook_Wallpaper_[3840x2160].jpg" class="card-img-top" alt="...">
+                    <!-- nutrition img. Added by ajax -->
+                    <img id="nutritionPhoto" src="https://via.placeholder.com/100" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <!-- item name. ajax  -->
                         <h5 class="card-title productName">Product Name </h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <!-- nutrition list. ajax  -->
+                        <ul class="card-text">
+                        </ul>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6">
+                <!-- Calories calculator  -->
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Product Name</th>
-                            <th scope="col">Total Calories</th>
                             <th scope="col">Brand</th>
+                            <th scope="col">Calories</th>
                             <th scope="col">Price</th>
                             <th scope="col">Calories Efficiency</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- tr th and td elements added by ajax   -->
                         <tr>
                             <th scope="row">1</th>
                             <td>---</td>
@@ -61,62 +124,65 @@
                             <td>---</td>
                             <td>---</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                        </tr>
+
                     </tbody>
                 </table>
+
+                <!-- Modal for instruction on page load.  -->
+                <!-- Choose city and Choose an item  -->
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close mr-auto" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Calories Efficiency calculator</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Welcome to Calories Efficiency calculator</h5>
+                            <p>To search for a grocery item: </p>
+                            <ul>
+                                <li>Select a city </li>
+                                <li>Select an item</li>
+                                <li>Press the search button</li>
+                            </ul>
+                            <p>Note: We only offer a limited number of cities and grocery items. Hopefully, the list
+                                grows over time.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Enter a keyword.</h4>
+            <div class="col-md-3">
+
+                <div id="nutrition" class="card">
+                    <div class="card-header">
+                        Product Detail
                     </div>
-                    <div class="modal-body">
-                        <p>Do not use special characters or numbers!</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <img id="itemImg" src="https://via.placeholder.com/100" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><span id="brandName"></span> <span class="productName"></span></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="col-md-3">
-            <div id="nutrition" class="card" style="width: 18rem;">
-                <div class="card-header">
-                    Product Detail
-                </div>
-                <img src="./ACNH_Tom_Nook_Wallpaper_[3840x2160].jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><span id="brandName"></span> <span class="productName"></span></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+
     </div>
     </div>
     </div>
     <script src="./script.js"></script>
-    <div class="footer">
-        <p>Fortune Cookie</p>
+    <!-- forget it for now -->
+    <div class="container">
+        <div class="footer ">
+            <p>Fortune Cookie</p>
+        </div>
     </div>
 </body>
+
 </html>
