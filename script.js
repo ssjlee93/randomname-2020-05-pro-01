@@ -48,6 +48,7 @@ function nutrition() {
         "x-app-id": "84d7c19a",
         "x-app-key": "b8834860ea9e6560026dfa655c816765"
     }
+
 }
 $.ajax(settings).done(function (response) {
     console.log(response);
@@ -60,3 +61,4 @@ $.ajax(settings).done(function (response) {
 }
 
 $("#searchBtn").on("click",search);
+

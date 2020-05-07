@@ -1,56 +1,79 @@
 * {
-      box-sizing: border-box;
+
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://www.ecopetit.cat/wpic/mpic/6-63445_food-wallpapers-download.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  body {
-      background-image: url("https://www.ecopetit.cat/wpic/mpic/6-63445_food-wallpapers-download.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
+tr {
+      background-color: white;
+      border-style: outset;
+      border-color: #006400;
+}
+.thead-dark {
+     color: #006400;
+}
+#nutrition, .modal-content {
+      border-width: 5px;
+      border-color: #006400;
+      border-style: outset;
+}
+
+.footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      color: black;
+      text-align: center;
+      font-size: 25px;
     }
-  tr {
-        background-color: white;
-        border-style: outset;
-        border-color: #006400;
-  }
-  .thead-dark {
-       color: #006400;
-  }
-  #nutrition, .modal-content {
-        border-width: 5px;
-        border-color: #006400;
-        border-style: outset;
-  }
-  .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: white;
-        color: black;
-        text-align: center;
-        font-size: 25px;
-      }
-  .table {
-        text-align: center;
-        margin-left: 0px;
-  }
-  .form-control {
-        border-style: outset;
-        border-width: 2px;
-        border-color: #006400;
-  }
-  #searchBtn {
-        background-color: #556B2F;
-  }
-  .card-header {
-        text-align: center;
-        font-size: 25px;
-        font-style: oblique;
-        text-decoration: underline;
-  }
-  .modal-content{
-        text-align: center;
-        position: relative;
-  }
-  .modal-title {
-        padding-right: 45px;
-  }
+
+
+.table {
+      text-align: center;
+      margin-left: 16px;
+}
+
+.form-control {
+      border-style: outset;
+      border-width: 2px;
+      border-color: #006400;
+}
+
+#searchBtn {
+      background-color: #556B2F;
+}
+
+.card-header {
+      text-align: center;
+      font-size: 25px;
+      font-style: oblique;
+      text-decoration: underline;
+}
+
+.modal-content{
+      text-align: center;
+      position: relative;
+}
+
+.modal-title {
+      padding-right: 45px;
+      text-align: center;
+}
+
+
+.btn-default {
+      position: relative;
+      margin-right: 135px;
+      border-style: outset;
+      border-width: 1px;
+      border-color: #006400;
+}
+
+
+
