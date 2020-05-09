@@ -29,13 +29,14 @@
 <body>
     <header>
         <div class="container">
-            <!-- two dropdown menus  -->
+            <!-- fixed navbar up top  -->
             <nav class="navbar navbar-light bg-light py-0 mb-3">
-                <div class="btn-group m-2">
-                    <!-- list of cities -->
-                    <h3 class="mx-3">Choose a city: </h3>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle py-2" type="button" id="cities"
+                <!-- input group for all the inputs -->
+                <div class="input-group my-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text px-3">Choose a city: </span>
+                        <!-- dropdown for cities -->
+                        <button class="btn btn-secondary dropdown-toggle " type="button" id="citiesBtn"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cities
                         </button>
@@ -52,33 +53,17 @@
                             <button class="dropdown-item city" type="button" data-city="Seattle">Seattle</button>
                             <button class="dropdown-item city" type="button" data-city="SF">San Francisco</button>
                         </div>
-                    </div>
-                    <br>
-                    <!-- list of query items -->
-                    <h3 class="mx-3">Choose an item: </h3>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle py-2" type="button" id="dropdownMenu2"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Items
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item item" type="button" data-item="eggs">eggs</button>
-                            <button class="dropdown-item item" type="button" data-item="milk">milk</button>
-                            <button class="dropdown-item item" type="button" data-item="bread">bread</button>
-                            <button class="dropdown-item item" type="button" data-item="oj">orange juice</button>
-                            <button class="dropdown-item item" type="button" data-item="rice">rice</button>
-                            <button class="dropdown-item item" type="button" data-item="steak">steak</button>
-                            <button class="dropdown-item item" type="button" data-item="butter">butter</button>
-                        </div>
-                    </div>
-                    <!-- execute search -->
 
-                    <button class="btn btn-success mx-3" type="button" id="searchBtn"><i class="fas fa-search"></i>
-                        Search</button>
+                    </div>
+                    <!-- input for- query items -->
+                    <input type="text" class="form-control" placeholder="Search an item" id="product" aria-label="item"
+                        aria-describedby="basic-addon2">
+                    <!-- search button -->
+                    <button class="btn btn-success" type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                    <!-- Google fonts -->
+                    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
                 </div>
-        </div>
-
-        </nav>
+            </nav>
         </div>
     </header>
     <div class="container">
@@ -86,97 +71,102 @@
             <div class="col-md-3">
                 <!-- nutrition info  -->
                 <div id="nutrition" class="card">
-                    <div class="card-header">
+                    <div class="card-header" id="itemName">
                         Nutrition facts
                     </div>
-
-                    <!-- nutrition img. Added by ajax -->
-                    <img id="nutritionPhoto" src="https://via.placeholder.com/100" class="card-img-top" alt="...">
-
+                    <!-- deleted nutrition img to save space -->
                     <div class="card-body">
-                        <!-- item name. ajax  -->
-                        <h5 class="card-title productName">Product Name </h5>
                         <!-- nutrition list. ajax  -->
-                        <ul class="card-text">
+                        <ul class="list-group">
+                            <li class="list-group-item">Brand name: <span id="brandName"></span></li>
+                            <li class="list-group-item">Calcium: <span id="calcium"></span> DV</li>
+                            <li class="list-group-item">Calories: <span id="calories"></span> kcal</li>
+                            <li class="list-group-item">Cholesterol: <span id="cholesterol"></span> mg</li>
+                            <li class="list-group-item">Dietary fiber: <span id="df"></span> g</li>
+                            <li class="list-group-item">Iron: <span id="iron"></span> DV</li>
+                            <li class="list-group-item">Protein: <span id="protein"></span> g</li>
+                            <li class="list-group-item">Saturated fat: <span id="saturated"></span> g</li>
+                            <li class="list-group-item">Sodium: <span id="sodium"></span> mg</li>
+                            <li class="list-group-item">Sugars: <span id="sugars"></span> g</li>
+                            <li class="list-group-item">Total Carbohydrate: <span id="carbs"></span> g</li>
+                            <li class="list-group-item">Total fat: <span id="fat"></span> g</li>
+                            <li class="list-group-item">Trans fatty acid: <span id="trans"></span> g</li>
+                            <li class="list-group-item">Vitamin A: <span id="a"></span> DV</li>
+                            <li class="list-group-item">Vitamin C: <span id="c"></span> DV</li>
                         </ul>
                     </div>
 
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <!-- Calories calculator  -->
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Brand</th>
-                            <th scope="col">Calories</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Calories Efficiency</th>
+            <div class="col-md-7">
+                <!-- modal button for instruction -->
+                <button type="button" class="btn btn-success my-3 mx-auto" data-toggle="modal" data-target="#myModal">
+                    Read instruction
+                </button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Calories Efficiency Calculator</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Welcome to Calories Efficiency calculator</h5>
+                                <p>To search for a grocery item: </p>
+                                <ul>
+                                    <li>Select a city </li>
+                                    <li>Select an item</li>
+                                    <li>Press the search button</li>
+                                </ul>
+                                <p>Note: We only offer a limited number of cities and grocery items. Hopefully, the list
+                                    grows over time.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- tr th and td elements added by ajax   -->
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                            <td>---</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-
-                <!-- Modal for instruction on page load.  -->
-                <!-- Choose city and Choose an item  -->
-                <div class="modal-dialog">
-
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close mr-auto" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Calories Efficiency calculator</h4>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <h5>Welcome to Calories Efficiency calculator</h5>
-                            <p>To search for a grocery item: </p>
-                            <ul>
-                                <li>Select a city </li>
-                                <li>Select an item</li>
-                                <li>Press the search button</li>
-                            </ul>
-                            <p>Note: We only offer a limited number of cities and grocery items. Hopefully, the list
-                                grows over time.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-
                     </div>
-
- 
                 </div>
+                    <!-- Calories calculator  -->
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Brand Name</th>
+                                <th scope="col">Calories</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Calories Efficiency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- tr th and td elements added by ajax   -->
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>---</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td>---</td>
+                            </tr>
 
+                        </tbody>
+                    </table>
+
+                    <!-- Modal for instruction on page load.  -->
+                    <!-- Choose city and type an item  -->
+
+                
             </div>
-
-            <div class="col-md-3">
-
-                <div id="nutrition" class="card">
-                    <div class="card-header">
-                        Product Detail
-                    </div>
-                    <img id="itemImg" src="https://via.placeholder.com/100" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><span id="brandName"></span> <span class="productName"></span></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+            <div class="col-md-2">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://via.placeholder.com/150" id="productImg"
+                        alt="Card image cap">
                 </div>
             </div>
 
