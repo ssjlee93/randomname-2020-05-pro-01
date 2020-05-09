@@ -1,5 +1,4 @@
 * {
-
     box-sizing: border-box;
 }
 
@@ -7,7 +6,8 @@ body {
     background-image: url("https://www.ecopetit.cat/wpic/mpic/6-63445_food-wallpapers-download.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-  }
+    font-family: 'Noto Sans', sans-serif;  
+}
 tr {
       background-color: white;
       border-style: outset;
@@ -33,10 +33,9 @@ tr {
       font-size: 25px;
     }
 
-
 .table {
       text-align: center;
-      margin-left: 16px;
+
 }
 
 .form-control {
@@ -52,8 +51,8 @@ tr {
 .card-header {
       text-align: center;
       font-size: 25px;
-      font-style: oblique;
-      text-decoration: underline;
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: bolder;
 }
 
 .modal-content{
@@ -65,7 +64,6 @@ tr {
       padding-right: 45px;
       text-align: center;
 }
-
 
 .btn-default {
       position: relative;
