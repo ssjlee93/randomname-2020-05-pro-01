@@ -25,10 +25,40 @@ $(document).ready(function () {
   });
 
 
-  function search() {
-    prices();
-    nutrition();
-    nutrients();
+  async function search() {
+    
+    let response = await prices();
+    obj.price = response[0].price;
+
+    response = await nutrition();
+
+    var thumbnail = response.common[0].photo.thumb;
+    var itemName = response.common[0].food_name;
+    var itemNameUp = itemName.toString().charAt(0).toUpperCase() + itemName.slice(1);
+    $("#itemName").text(itemNameUp);
+    $("#productImg").attr("src", thumbnail);
+    obj.name = itemName;
+
+    response = await nutrients();
+
+    $("#brandName").text(response.hits[index].fields.brand_name);
+    $("#calcium").text(response.hits[index].fields.nf_calcium_dv);
+    $("#calories").text(response.hits[index].fields.nf_calories);
+    $("#cholesterol").text(response.hits[index].fields.nf_cholesterol);
+    $("#df").text(response.hits[index].fields.nf_dietary_fiber);
+    $("#iron").text(response.hits[index].fields.nf_iron_dv);
+    $("#protein").text(response.hits[index].fields.nf_protein);
+    $("#saturated").text(response.hits[index].fields.nf_saturated_fat);
+    $("#sodium").text(response.hits[index].fields.nf_sodium);
+    $("#sugars").text(response.hits[index].fields.nf_sugars);
+    $("#carbs").text(response.hits[index].fields.nf_total_carbohydrate);
+    $("#fat").text(response.hits[index].fields.nf_total_fat);
+    $("#trans").text(response.hits[index].fields.nf_trans_fatty_acid);
+    $("#a").text(response.hits[index].fields.nf_vitamin_a_dv);
+    $("#c").text(response.hits[index].fields.nf_vitamin_c_dv);
+    obj.calories = response.hits[index].fields.nf_calories;
+    obj.brand = response.hits[index].fields.brand_name;
+
     printTables();
     console.log(obj);
   }
@@ -44,11 +74,7 @@ $(document).ready(function () {
       }
     };
 
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-      obj.price = response[0].price;
-      return obj;
-    });
+    return $.ajax(settings)
     
   }
 
@@ -64,16 +90,7 @@ $(document).ready(function () {
       }
 
     }
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-      var thumbnail = response.common[0].photo.thumb;
-      var itemName = response.common[0].food_name;
-      var itemNameUp = itemName.toString().charAt(0).toUpperCase() + itemName.slice(1);
-      $("#itemName").text(itemNameUp);
-      $("#productImg").attr("src", thumbnail);
-      obj.name = itemName;
-      return obj;
-    });
+    return $.ajax(settings)
 
   }
 
@@ -89,27 +106,7 @@ $(document).ready(function () {
         "x-rapidapi-key": "d091112254mshfa882a9bf0c3d19p1a1894jsn938871f9c5a2"
       }
     }
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-      $("#brandName").text(response.hits[index].fields.brand_name);
-      $("#calcium").text(response.hits[index].fields.nf_calcium_dv);
-      $("#calories").text(response.hits[index].fields.nf_calories);
-      $("#cholesterol").text(response.hits[index].fields.nf_cholesterol);
-      $("#df").text(response.hits[index].fields.nf_dietary_fiber);
-      $("#iron").text(response.hits[index].fields.nf_iron_dv);
-      $("#protein").text(response.hits[index].fields.nf_protein);
-      $("#saturated").text(response.hits[index].fields.nf_saturated_fat);
-      $("#sodium").text(response.hits[index].fields.nf_sodium);
-      $("#sugars").text(response.hits[index].fields.nf_sugars);
-      $("#carbs").text(response.hits[index].fields.nf_total_carbohydrate);
-      $("#fat").text(response.hits[index].fields.nf_total_fat);
-      $("#trans").text(response.hits[index].fields.nf_trans_fatty_acid);
-      $("#a").text(response.hits[index].fields.nf_vitamin_a_dv);
-      $("#c").text(response.hits[index].fields.nf_vitamin_c_dv);
-      obj.calories = response.hits[index].fields.nf_calories;
-      obj.brand = response.hits[index].fields.brand_name;
-      return obj;
-    });
+    return $.ajax(settings)
   }
 
   function printTables() {

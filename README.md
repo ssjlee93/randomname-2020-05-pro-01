@@ -19,7 +19,7 @@ Goal: Show efficienty of calories consumed per dollar //
 5. (localStorage and save calories count in list format 
 
 Basic sketch 
-![Screenshot of the project](/PaintSketch.png")
+![Screenshot of the project](/PaintSketch.png)
 
 * Modal for initial input  (equiv to prompt);
 * AJAX call once the modal submit button is pressed  
@@ -27,8 +27,17 @@ Basic sketch
 * left hand side: nutritional facts img and product img 
 * main create a table of lists 
 
-Modales: comes in when input value is not string. 
+Modals: comes in when input value is not string. 
 if an error occurs (for cases that wal mart has an item and nutritionix does not and vice versa )
+
+## Upon finishing the pro
+* Steve spent majority of his time looking for an API that works for this pro. 
+* Some new technologies we've visited: 
+1. Greensock.js: animating js library 
+2. Materialize: CSS framework. Bootstrap alternative that overlaps with Bootstrap. 
+3. Material Design for Bootstrap: CSS framework that works with Bootstrap
+4. OAuth type APIs: OAuth requires the user to login to make ajax calls. 
+5. Google APIs and Amazon APIs
 
 
 
