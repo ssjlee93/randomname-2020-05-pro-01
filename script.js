@@ -1,24 +1,27 @@
 $(document).ready(function () {
+  $('body').bootstrapMaterialDesign();
 
   var city = "";
   var product = "";
-  var name = "";
-  var price;
-  var brand = "";
-  var calories;
   var index = 0;
   var counter = 0;
+  var obj = {};
+  var inputs = ["eggs", "bread","milk","orange juice","rice","steak","butter"];
 
   $(".city").on("click", function (event) {
     event.preventDefault();
     city = $(this).attr("data-city");
     $("#citiesBtn").text($(this).text());
   })
+
   $("#searchBtn").on("click", function (event) {
     event.preventDefault();
     product = $("#product").val().trim();
-
-    search();
+    if (inputs.includes(product)){
+     search();
+    } else {
+    $("#validation").modal('show');
+    }
   });
 
 
@@ -27,8 +30,7 @@ $(document).ready(function () {
     nutrition();
     nutrients();
     printTables();
-    console.log(price);
-
+    console.log(obj);
   }
 
 
@@ -44,10 +46,10 @@ $(document).ready(function () {
 
     $.ajax(settings).done(function (response) {
       console.log(response);
-      price = response[0].price;
-     return price;
+      obj.price = response[0].price;
+      return obj;
     });
-
+    
   }
 
   function nutrition() {
@@ -69,7 +71,8 @@ $(document).ready(function () {
       var itemNameUp = itemName.toString().charAt(0).toUpperCase() + itemName.slice(1);
       $("#itemName").text(itemNameUp);
       $("#productImg").attr("src", thumbnail);
-      name = itemNameUp;
+      obj.name = itemName;
+      return obj;
     });
 
   }
@@ -103,34 +106,37 @@ $(document).ready(function () {
       $("#trans").text(response.hits[index].fields.nf_trans_fatty_acid);
       $("#a").text(response.hits[index].fields.nf_vitamin_a_dv);
       $("#c").text(response.hits[index].fields.nf_vitamin_c_dv);
-      calories = response.hits[index].fields.nf_calories;
-      brand = response.hits[index].fields.brand_name;
+      obj.calories = response.hits[index].fields.nf_calories;
+      obj.brand = response.hits[index].fields.brand_name;
+      return obj;
     });
   }
 
   function printTables() {
+    counter++;
     var newItem = $("<tr>");
     var newRow = $("<th>");
     newRow.attr("scope", "row");
-    newRow.text(counter + 1);
+    newRow.text(counter);
     newItem.append(newRow);
     var nametd = $("<td>");
-    nametd.text(name);
+    nametd.text(obj.name);
     newItem.append(nametd);
-    var brandtd = $("<td>").text(brand);
+    var brandtd = $("<td>").text(obj.brand);
     newItem.append(brandtd);
-    var caloriestd = $("<td>").text(calories);
+    var caloriestd = $("<td>").text(obj.calories);
     newItem.append(caloriestd);
-    var pricetd = $("<td>").text(price);
+    var pricetd = $("<td>").text(obj.price);
     newItem.append(pricetd);
-    var priceInt = parseInt(price);
-    var caloriesInt = parseInt(calories);
-    var efficiency = (caloriesInt / priceInt) * 100;
+    var priceInt = parseInt(obj.price);
+    var caloriesInt = parseInt(obj.calories);
+    var efficiency = ((caloriesInt / priceInt) * 100).toFixed(2);
     var efficiencytd = $("<td>").text(efficiency);
     newItem.append(efficiencytd);
 
     $("tbody").append(newItem);
+    return;
 
   }
-
+  
 });
