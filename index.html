@@ -16,6 +16,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.0.min.js"
         integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -34,7 +41,7 @@
                 <!-- input group for all the inputs -->
                 <div class="input-group my-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text px-3">Choose a city: </span>
+
                         <!-- dropdown for cities -->
                         <button class="btn btn-secondary dropdown-toggle " type="button" id="citiesBtn"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -101,41 +108,42 @@
 
             <div class="col-md-7">
                 <!-- modal button for instruction -->
-                
-                    <!-- Calories calculator  -->
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Product Name</th>
-                                <th scope="col">Brand Name</th>
-                                <th scope="col">Calories</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Calories Efficiency</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- tr th and td elements added by ajax   -->
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
-                                <td>---</td>
-                            </tr>
 
-                        </tbody>
-                    </table>
+                <!-- Calories calculator  -->
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Brand Name</th>
+                            <th scope="col">Calories</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Calories Efficiency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- tr th and td elements added by ajax   -->
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                            <td>---</td>
+                        </tr>
 
-                    <!-- Modal for instruction on page load.  -->
-                    <!-- Choose city and type an item  -->
+                    </tbody>
+                </table>
 
-                
+                <!-- Modal for instruction on page load.  -->
+                <!-- Choose city and type an item  -->
+
+
             </div>
             <div class="col-md-2">
-                <button type="button" class="btn btn-success my-3 mx-auto" data-toggle="modal" data-target="#myModal">
-                    Read instruction
+                <button type="button" class="btn btn-success my-3 mx-auto pulse" data-toggle="modal"
+                    data-target="#myModal">
+                    Instructions
                 </button>
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -166,7 +174,7 @@
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="https://via.placeholder.com/150" id="productImg"
+                    <img class="card-img-top z-depth-5" src="https://via.placeholder.com/150" id="productImg"
                         alt="Card image cap">
                 </div>
             </div>
